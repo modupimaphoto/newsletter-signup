@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="flex-wrapper">
+      <!--First wrapper-->
+      <div class="mobile-wrapper">
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt = "mobile illustration">
+      </div>
+      <!--Second wrapper-->
+      <div class="content-wrapper">
+        <h1>Stay updated!</h1>
+        <p>
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul>
+          <li>
+            <img src="assets/images/icon-list.svg" alt="icon list">
+            Product discovery and building what matters
+          </li>
+          <li>
+            <img src="assets/images/icon-list.svg" alt="icon list">
+            Measuring to ensure updates are a success
+          </li>
+          <li>
+            <img src="assets/images/icon-list.svg" alt="icon list">
+            And much more!
+          </li>
+        </ul>
+        <div>
+          <form id="form">
+            <div class="input-group">
+              <label for="email">Email address</label>
+              <span class="error-msg" id="error-msg"></span>
+              <input type="email" id="email" placeholder="email@company.com">
+            </div>
+            <div class="input-group">
+              <input type="submit" value="Subscribe to monthly newsletter">
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--third wrapper-->
+      <div class="desktop-wrapper"></div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/modupimaphoto">modupimaphoto</a>.
+  </div>
+  <script>
+    const form = document.getElementById("form");
+    let email = "";
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const email_input = document.getElementById("email");
+      const error_msg = document.getElementById("error-msg");
+      
+      if(email_input.value.trim().length == 0){
+        error_msg.innerHTML = "Valid email required";
+        email_input.style.borderColor = "var(--tomato)";
+        email_input.style.backgroundColor = "rgba(255, 98, 87, 0.2)";
+      }else{
+        const container = document.querySelector(".container");
+        container.classList.add("width-30");
+
+        email = email_input.value;
+        let success = `
+          <div class="success-wrapper">
+            <div>
+              <img src="assets/images/icon-list.svg" alt="icon list">
+            </div>
+            <h1>
+              Thanks for subscribing!
+            </h1>
+            <p>
+              A confirmation email has been sent to <span>${email}</span>. 
+              Please open it and click the button inside to confirm your subscription.
+            </p>
+            <button type="button">Dismiss message</button>
+          </div>
+        `;
+        container.innerHTML = success;
+      }
+    });
+  </script>
+</body>
+</html>
