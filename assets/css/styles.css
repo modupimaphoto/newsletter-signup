@@ -6,10 +6,6 @@
 	font-family: Roboto-Regular;
 	src: url("../fonts/Roboto-Regular.ttf");
 }
-/*
-- Mobile: 375px
-- Desktop: 1440px
-*/
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -32,7 +28,7 @@ body {
 	background-color: var(--white);
 	margin: 0 auto;
 	width: 60%;
-	margin-top: 6%;
+	margin-top: 3%;
 	padding: 20px;
 	border-radius: 15px;
 }
@@ -99,14 +95,14 @@ body {
 	font-family: Roboto-Regular;
 	transition: 1s;
 }
-.input-group input[type="submit"]:hover, .success-wrapper button:hover {
-	background: linear-gradient(to right, rgb(255, 87, 137), var(--tomato));
-}
 .input-group input[type="email"], input[type="submit"], .success-wrapper button{
 	width: 100%;
-	padding: 14px 20px;
+	padding: 16px 20px;
 	display: block;
 	border-radius: 6px;
+}
+.input-group input[type="submit"]:hover, .success-wrapper button:hover {
+	background: linear-gradient(to right, rgb(255, 87, 137), var(--tomato));
 }
 /*	
 	#########################
@@ -131,16 +127,17 @@ body {
 	width: 75%;
 }
 .attribution {
-	margin: 10px;
-	text-align: center;
-	color: var(--white);
 	font-family: Roboto-Regular;
+	text-align: center;
+	color: white;
+	padding: 15px;
 }
 .attribution a {
-	color: var(--tomato)
+	color: var(--tomato);
+	text-decoration: none;
 }
 .success-wrapper {
-	padding: 10px;
+	padding: 8px;
 }
 .success-wrapper img{
 	width: 40px;
@@ -177,6 +174,25 @@ body {
 	.content-wrapper h1, p, ul, form{
 		padding: 15px
 	}
+	.content-wrapper h1 {
+		font-size: 2.8rem;
+	}
+	.content-wrapper p {
+		font-size: 1.5rem;
+	}
+	.content-wrapper li {
+		font-size: 1.2rem;
+	}
+	.input-group{
+		padding: 0;
+		margin-bottom: 15px
+	}
+	.input-group label, .error-msg {
+		font-size: .9em;
+	}
+	.input-group input[type="email"], input[type="submit"], .success-wrapper button{
+		padding: 18px 20px;
+	}
 	.container img {
 		width: 20px;
 	}
@@ -198,5 +214,8 @@ body {
 	}
 	.success-wrapper p {
 		margin-bottom: 50%;
+	}
+	.attribution {
+		color: black
 	}
 }
